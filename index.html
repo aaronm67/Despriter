@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/filereader.js"></script>
+    <meta charset=utf-8 />
+    <title>Despriter</title>
+</head>
+<body>
+  <img id="img" src="data:image/png;base64,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">
+  <br />
+
+  <form>
+  <textarea id="css" style="width: 100%; height: 200px;">
+.ui-icon { height: 18px; width: 18px; }    
+.ui-icon-plus { background-position:-1px -1px; }
+.ui-icon-minus { background-position:-37px -1px; }
+.ui-icon-delete { background-position:-73px -1px; }
+.ui-icon-arrow-r { background-position:-108px -1px; }
+.ui-icon-arrow-l { background-position:-144px -1px; }
+.ui-icon-arrow-u { background-position:-180px -1px; }
+.ui-icon-arrow-d { background-position:-216px -1px; }
+.ui-icon-check { background-position:-252px -1px; }
+.ui-icon-gear { background-position:-288px -1px; }
+.ui-icon-refresh { background-position:-323px -1px; }
+.ui-icon-forward { background-position:-360px -1px; }
+.ui-icon-back { background-position:-396px -1px; }
+.ui-icon-grid { background-position:-432px -1px; }
+.ui-icon-star { background-position:-467px -1px; }
+.ui-icon-alert { background-position:-503px -1px; }
+.ui-icon-info { background-position:-539px -1px; }
+.ui-icon-home { background-position:-575px -1px; }
+.ui-icon-search { background-position:-611px -1px; }
+.ui-icon-checkbox-on { background-position:-647px -1px; }
+.ui-icon-checkbox-off { background-position:-683px -1px; }
+.ui-icon-radio-on { background-position:-718px -1px; }
+.ui-icon-radio-off { background-position:-754px -1px; }
+.ui-icon-bars { background-position:-788px -1px; }
+.ui-icon-edit { background-position:-824px -1px; }
+  </textarea>
+  <button type="submit">Desprite</button>
+</form>
+    <script type="text/javascript">
+        $(function() {
+            var opts = {
+                readAsMap: {
+                    '.*': 'DataURL'
+                },
+                dragClass: "filedrop",
+                on: {
+                    error: function() {
+                        alert("You must run this on a webserver to get results");
+                    },
+                    load: function (e, file) {
+                        var data = e.target.result;
+                        $('#img').attr('src', data);
+                    }
+                }
+            };
+
+            $("body").fileReaderJS(opts).fileClipboard(opts);
+        });
+    </script>
+
+    <script type="text/javascript">
+
+$(function() {
+var canvas = document.createElement("canvas");
+var ctx = canvas.getContext("2d");
+
+var img = document.getElementById("img");
+img.onload = function() {
+  canvas.width = this.width;
+  canvas.height = this.height;
+  ctx.drawImage(this, 0, 0);
+  parse();
+};
+
+function parse() {
+    $('img.parsed').remove();
+  var text = $.trim($("textarea").val()).split("\n");
+  var line = text.shift();
+  var width = parseWidth(line);
+  var height = parseHeight(line);
+
+  while (text.length) {
+      var thisline = text.shift();      
+      var x = -parseBackgroundX(thisline);
+      var y = -parseBackgroundY(thisline);
+      var thisHeight = parseWidth(thisline) || height;
+      var thisWidth = parseHeight(thisline) || width;
+      var imgData = ctx.getImageData(x, y, thisWidth, thisHeight);                    
+    
+      var c2 = document.createElement("canvas");      
+      c2.width = thisWidth;
+      c2.height = thisHeight;   
+      var ctx2 = c2.getContext("2d");
+      ctx2.putImageData(imgData, 0, 0);    
+    
+      var img2 = document.createElement('img');
+      img2.src = c2.toDataURL();
+      img2.className = "parsed";
+      document.body.appendChild(img2);
+  }
+}
+
+function parseWidth(text) {
+  return parseInt(text.replace(/.*width: (\d+)px;.*/, "$1"));
+}
+
+function parseHeight(text) {
+  return parseInt(text.replace(/.*height: (\d+)px;.*/, "$1"));
+}
+
+function parseBackgroundX(text) {
+  var ret = text.replace(/.*background-position: ?([0-9\-]+)(px)? ([0-9\-]+)(px)?;.*/, "$1");
+    return parseInt(ret);
+}
+function parseBackgroundY(text) {
+  var ret = text.replace(/.*background-position: ?[0-9\-]+(px)? ([0-9\-]+)(px)?;.*/, "$2");
+    return parseInt(ret);
+}
+
+
+$('textarea').change(function() {
+    parse();
+});
+
+});
+
+    </script>
+</body>
+</html>
+</body>
+</html>
